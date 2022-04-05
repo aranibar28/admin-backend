@@ -18,4 +18,4 @@
 Crear un archivo `.env` y especificar las siguientes variables:
 
 - PORT=3000
-- DB_CNN=mongodb+srv://<username>:<password>@cluster0.o7ft6.mongodb.net/<testbd>
+- DB_CNN=mongodb+srv://`<username>`:`<password>`@cluster0.o7ft6.mongodb.net/`<testbd>`
