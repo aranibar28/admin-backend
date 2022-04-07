@@ -17,8 +17,10 @@ app.use(express.json());
 dbConnection();
 
 // Rutas
-app.use("/api/users", require("./routes/users"));
 app.use("/api/login", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/hospitals", require("./routes/hospitals"));
+app.use("/api/medics", require("./routes/medics"));
 
 app.listen(process.env.PORT, () => {
   console.log("Servidor corriendo Puerto: " + 3000);
