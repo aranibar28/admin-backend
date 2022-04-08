@@ -13,6 +13,8 @@
      npm i bcryptjs
      npm i cors
      npm i jsonwebtoken
+     npm i express-fileupload
+     npm install uuid
 
 ### Creación de variables de Entorno
 

@@ -22,6 +22,7 @@ app.use("/api/users", require("./routes/users"));
 app.use("/api/hospitals", require("./routes/hospitals"));
 app.use("/api/medics", require("./routes/medics"));
 app.use("/api/search", require("./routes/search"));
+app.use("/api/upload", require("./routes/uploads"));
 
 app.listen(process.env.PORT, () => {
   console.log("Servidor corriendo Puerto: " + 3000);
