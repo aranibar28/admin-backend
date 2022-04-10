@@ -10,14 +10,27 @@ const router = Router();
 
 router.get("/", getMedics);
 
-router.post("/", 
-    validateJWT, [
-    check('name', 'El nombre del médico es necesario').not().isEmpty(),
-    check('hospital', 'El hospital id debe ser válido').isMongoId(),
-    validateFields], 
-    createMedic);
+router.post(
+  "/",
+  [
+    validateJWT,
+    check("name", "El nombre del médico es necesario").not().isEmpty(),
+    check("hospital", "El hospital id debe ser válido").isMongoId(),
+    validateFields,
+  ],
+  createMedic
+);
 
-router.put("/:id", [], updateMedic);
+router.put(
+  "/:id",
+  [
+    validateJWT,
+    check("name", "El nombre del médico es necesario").not().isEmpty(),
+    check("hospital", "El hospital id debe ser válido").isMongoId(),
+    validateFields,
+  ],
+  updateMedic
+);
 
 router.delete("/:id", deleteMedic);
 
