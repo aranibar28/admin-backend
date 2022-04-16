@@ -34,10 +34,10 @@ const getCollection = async (req, res = response) => {
   let data = [];
   switch (table) {
     case "users":
-      data = await User.find({ hospital: regex });
+      data = await User.find({ name: regex });
       break;
     case "hospitals":
-      data = await Hospital.find({ medic: regex }).populate("user", "name img");
+      data = await Hospital.find({ name: regex }).populate("user", "name img");
       break;
     case "medics":
       data = await Medic.find({ name: regex }).populate("user", "name img").populate("hospital", "name img");

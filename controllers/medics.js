@@ -10,6 +10,22 @@ const getMedics = async (req, res = response) => {
   });
 };
 
+const getMedicById = async (req, res = response) => {
+  const id = req.params.id;
+  try {
+    const medic = await Medic.findById(id).populate("user", "name image").populate("hospital", "name image");
+    res.json({
+      ok: true,
+      medic,
+    });
+  } catch (error) {
+    res.json({
+      ok: false,
+      msg: "Error inesperado... revisar logs!",
+    });
+  }
+};
+
 const createMedic = async (req, res = response) => {
   const uid = req.uid;
 
@@ -101,4 +117,4 @@ const deleteMedic = async (req, res = response) => {
   }
 };
 
-module.exports = { getMedics, createMedic, updateMedic, deleteMedic };
+module.exports = { getMedics, getMedicById, createMedic, updateMedic, deleteMedic };
